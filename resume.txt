@@ -136,7 +136,7 @@ also adds the ability to add the imports in either CommonJS or ESM formats.
 NPM MODULES
 
 * https://www.npmjs.com/package/i18next-conv
-Due to my many contributions to i18next, I am a member of the official github
+Due to my many contributions to i18next, I am a member of the official GitHub
 i18next organization and became the main maintainer of this module.  This module
 parses and converts PO files into the i18next format which is based on JSON.
 This is useful for teams where the translators use the gettext industry standard
@@ -151,7 +151,7 @@ used both in the server and in the browser.
 Currently it has over 2000 monthly downloads.
 
 * https://www.npmjs.com/package/react-stay-scrolled
-Currently having 34 stars in github and over 1000 monthly downloads, this React
+Currently having 34 stars in GitHub and over 1000 monthly downloads, this React
 library helps containers such as chat windows scroll down automatically whenever
 new messages arrive.
 
