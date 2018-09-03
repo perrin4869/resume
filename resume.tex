@@ -1,0 +1,242 @@
+% LaTeX file for resume 
+% This file uses the resume document class (res.cls)
+
+\documentclass{res} 
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\newsectionwidth{0pt}  % So the text is not indented under section headings
+\usepackage{fancyhdr}  % use this package to get a 2 line header
+\usepackage{hyperref}
+\renewcommand{\headrulewidth}{0pt} % suppress line drawn by default by fancyhdr
+\setlength{\headheight}{24pt} % allow room for 2-line header
+\setlength{\headsep}{24pt}  % space between header and text
+\setlength{\headheight}{24pt} % allow room for 2-line header
+\pagestyle{fancy}     % set pagestyle for document
+% \rhead{ {\it Z. Zinger}\\{\it p. \thepage} } % put text in header (right side)
+\cfoot{}                                     % the foot is empty
+\topmargin=-0.5in % start text higher on the page
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+}
+
+\begin{document}
+\thispagestyle{empty} % this page has no header  
+\name{JULIAN GRINBLAT\\[12pt]} % the \\[12pt] adds a blank line after name
+
+\address{\begin{tabular}{l}{\bf ADDRESS} \\ % for some reason since the second address is a table, the first one has to be too to get the alignment correctly
+   146-0085, Tokyo Prefecture, Ota-ku  \\
+   Kugahara 3-30-9, Room 104 \\
+   (090) 7768-6902
+\end{tabular}}
+
+\address{\begin{tabular}{@{}ll}
+   Email: & \href{mailto:julian@dotcore.co.il}{julian@dotcore.co.il} \\
+   GitHub: & \url{https://github.com/perrin4869} \\
+   NPM: & \url{https://www.npmjs.com/~perrin4869}
+\end{tabular}}
+
+\begin{resume}
+ 
+\section{\centerline{PROFESSIONAL EXPERIENCE}} 
+\vspace{8pt}
+{\sl Rakuten, Tokyo, Japan} \hfill        April 2015 - Present
+\vspace{8pt}
+
+\title{APPLICATION ENGINEER}
+\employer{}
+\location{}
+\dates{January 2018 - Present}
+\begin{position}
+I worked on the frontend portal for our self-service environment.
+Originally developed as a collection of React components, I introduced
+many libraries to architect and test the application. Some of them
+include redux, react-final-form, ramda, normalizr, reselect, re-reselect,
+mocha, chai, sinon, postcss, etc.\\
+
+ \begin{itemize} \itemsep -2pt % reduce space between items
+   \item Utilize Redux to manage global application state, write custom
+middlewares accomplish side effects such as API calls and saving data
+to local storage, author selectors using reselect and re-reselect
+  \item Lint the codebase using eslint and the airbnb rules
+  \item Author tests based on mocha, chai, sinon, enzyme
+  \item Introduce react-final-form to manage the form state
+  \item Use react-final-form to manage the form state
+  \item Add PostCSS and integrate it with webpack to build our CSS
+resources which included Bootstrap, Font Awesome and others
+  \item Minify images using webpack and the imagemin plugin
+ \end{itemize}
+\end{position}
+
+\title{DEVOPS ENGINEER}
+\employer{}
+\location{}
+\dates{June 2015  - December 2017}
+\begin{position}
+I was originally assigned to the Server Platform Team upon joining the company.
+I helped maintain our many storage solutions (Pure Storage, Nimble Storage, etc),
+our OpenStack environment, our SDN environment, and others.
+Some of the tasks I accomplished include: \\
+
+\begin{itemize} \itemsep -2pt % reduce space between items
+  \item Create a dashboard which visualizes storage telemetry such as operation
+rates and latency. This was built using Fluentd, InfluxDB, Grafana, SNMP,
+Paramiko and custom Python-based tools.
+  \item Author Python scripts for automation of routine operations of our
+SDN environment. These scripts simplified and increased the reliability
+of routine operations such as backups and resource allocation with the
+hosting VMware cluster. Made use of pyVmomi to manage VMware resources.
+  \item Fix a problem in our OpenStack environment where sysctl variables would
+be reset upon restart. Update the Ansible playbooks and provisioned
+the fixes to all the relevant nodes.
+  \item Migrate OpenStack instances from one of our tenants to newly added
+tenants. This involved researching and testing the procedure which
+included manual updates of the relevant MySQL records, writing a manual
+and executing the operation successfully.
+\end{itemize}
+\end{position}
+
+\vspace{0.2in} 
+\section{\centerline{EDUCATION}} 
+\vspace{8pt} 
+{\sl Bachelor of Science}, Physics \\ % \sl will be bold italic in
+Osaka University      \hfill    March, 2015
+  
+\vspace{0.2in} 
+
+\newpage
+
+\section{\centerline{OPEN SOURCE CONTRIBUTIONS}}
+\vspace{8pt} 
+
+I have made several contributions to open source communities, mostly
+centered around JavaScript and Node.js, which can be found publically
+in my GitHub account.
+
+\subsubsection{PULL REQUESTS}
+
+\begin{itemize}
+  \item \url{https://github.com/socketio/socket.io/pull/2745} \\
+  Socket.IO is a popular websocket library for Node.js which provides
+  abstractions for different kinds of persistent connections, such as web
+  sockets and XHR polling, and additional features such as multiplexing.
+  This PR fixed a bug introduced in version 1.5.0 of the library, where
+  some query string parameters were being ignored. The solution was to use
+  the ES5 Object.assign function. A polyfill to the function was added in
+  order to keep backwards compatibility with old IE browsers which were
+  still being supported at the time.
+
+  \item \url{https://github.com/socketio/engine.io/pull/444} \\
+  This PR fixes a bug introduced in version 1.5.1 of the library.
+  While the fix itself was a simple one line removal, I introduced a
+  regression test to ensure that the bug does not resurface in the future.
+
+  \item \url{https://github.com/agentk/fontfacegen/pull/26} \\
+  fontfacegen is a library that uses FontForge in the background to generate
+  all the font formats required to use custom fonts on the browser. This PR
+  introduces a new feature to be able to select only a subset of the
+  characters from the font files to be output. This is especially important
+  in font sets for Japanese, where the whole font file size could be multiple
+  MB, but in reality only a handful of characters are needed, reducing the
+  size significantly.
+
+  \item \url{https://github.com/libxmljs/libxmljs/pull/521} \\
+  Adds support for XML processing instructions to the libxmljs library.
+  One use case is for adding a stylesheet to svg files.
+  libxmljs is a wrapper around the C library libxml2, and therefore this
+  PR is mostly C++ code which binds the Node.JS JavaScript engine, V8, to
+  the relevant libxml2 functions. Implementing this PR was very instructive
+  in regards to the inner workings of Node.JS.
+
+  \item \url{https://github.com/final-form/react-final-form/pull/266} \\
+  Very useful library to manage form state, based on the observer pattern.
+  This PR introduces an example demonstrating how to integrate lookahead components
+  with react-final-form and redux, and demonstrates the usage of different
+  features of the library.
+
+  \item \url{https://github.com/jasonpincin/stream-to-string/pull/1} \\
+  This small module converts a node stream into a string.
+  Adds the option to specify a specific encoding when converting a stream to
+  a string, making it a non-breaking change and adding a regression test.
+  This PR is later used in my own vinyl-to-string NPM module.
+
+  \item \url{https://github.com/izolate/html2pug/pull/2} \\
+  Converts HTML into Pug, an alternative and less verbose templating language,
+  popular to render HTML in Express applications. The main purpose of this PR
+  is to replace the jsdom as the HTML parser with the standard parse5 HTML
+  parser, allowing to handle features of HTML such as comments, parse fragments,
+  etc.
+
+  \item \url{https://github.com/itgalaxy/favicons/pull/110} \\
+  Small NPM module used to generate favicons for different platforms and their
+  associated files. This PR introduced the option to add the generated HTML
+  needed to embed to a webpage to use the generated favicons, to the files piped
+  in the gulp plugin version of the module. This enables additional modifications
+  to the HTML, such as converting it to Pug using gulp-html2pug.
+
+  \item \url{https://github.com/JRJurman/rollup-plugin-polyfill/pull/2} \\
+  Small plugin used to introduce imports (usually polyfills) to the top of an
+  application built by Rollup. This PR enables the generation of Source Maps,
+  silencing various warnings issued by Rollup during the building process,
+  and also adds the ability to add the imports in either CommonJS or ESM
+  formats.
+\end{itemize}
+
+\subsubsection{NPM MODULES}
+
+\begin{itemize}
+  \item \url{https://www.npmjs.com/package/i18next-conv} \\
+  Due to my many contributions to i18next, I am a member of the official
+  github i18next organization and became the main maintainer of this module.
+  This module parses and converts PO files into the i18next format which
+  is based on JSON. This is useful for teams where the translators use
+  the gettext industry standard and an integration with i18next is needed.
+  It has over 5000 weekly downloads.
+
+  \item \url{https://www.npmjs.com/package/i18next-fetch-backend} \\
+  One of my contributions to the extensive and popular JavaScript i18n
+  environment, i18next, this library provides an alternative backend
+  using fetch, to the default XHR backend, which is useful in environments
+  where i18next is used both in the server and in the browser.
+  Currently it has over 2000 monthly downloads.
+
+  \item \url{https://www.npmjs.com/package/react-stay-scrolled} \\
+  Currently having 34 stars in github and over 1000 monthly downloads,
+  this React library helps containers such as chat windows scroll down
+  automatically whenever new messages arrive.
+
+  \item \url{https://www.npmjs.com/package/vinyl-contents-tostring} \\
+  Module used to convert the content of vinyl files (which are the backbone
+  of gulp) into strings. This is used in many of my gulp plugins.
+  This module has over 1000 monthly downloads.
+
+  \item \url{https://www.npmjs.com/package/rollup-plugin-i18next-conv} \\
+  Rollup plugin integrating i18next-conv. Enables import of PO files,
+  converting them into JSON resources, which can then be handed to
+  i18next.
+  This is useful especially when building a webview application, where
+  all the content has to be bundled into the app to be used offline.
+
+  \item \url{https://www.npmjs.com/package/gulp-xml-transformer} \\
+  Gulp integration for libxmljs.
+  This module has over 1000 monthly downloads.
+\end{itemize}
+
+\vspace{0.2in} 
+\section{\centerline{LANGUAGES}} 
+\vspace{15pt}
+\begin{itemize}
+   \item Native Spanish
+   \item Fluent English
+   \item Fluent Hebrew
+   \item Japanese Business (JLPT N1 Certified)
+\end{itemize}
+
+
+\vspace{0.2in} 
+ 
+\end{resume} 
+\end{document}
