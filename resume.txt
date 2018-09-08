@@ -28,8 +28,6 @@ postcss, etc.
 
 * Introduce react-final-form to manage the form state
 
-* Use react-final-form to manage the form state
-
 * Add PostCSS and integrate it with webpack to build our CSS resources which
   included Bootstrap, Font Awesome and others
 
