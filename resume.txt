@@ -12,7 +12,7 @@ Rakuten                                                    Apr 01 2015 - Current
 
 APPLICATION ENGINEER
 
-I worked on the frontend portal for our self-service environment.  Originally
+Worked on the frontend portal for our self-service environment.  Originally
 developed as a collection of React components, I introduced many libraries to
 architect and test the application. Some of them include redux,
 react-final-form, ramda, normalizr, reselect, re-reselect, mocha, chai, sinon,
@@ -37,8 +37,8 @@ postcss, etc.
 
 DEVOPS ENGINEER
 
-I was originally assigned to the Server Platform Team upon joining the company.
-I helped maintain our many storage solutions (Pure Storage, Nimble Storage,
+Originally assigned to the Server Platform Team upon joining the company.
+Helped maintain our many storage solutions (Pure Storage, Nimble Storage,
 etc), our OpenStack environment, our SDN environment, and others.  Some of the
 tasks I accomplished include:
 
@@ -67,9 +67,8 @@ Osaka University
 
 Open Source Contributions
 ================================================================================
-I have made several contributions to open source communities, mostly centered
-around JavaScript and Node.js, which can be found publically in my GitHub
-account.
+Made several contributions to open source communities, mostly centered around
+JavaScript and Node.js, which can be found publically on GitHub.
 
 PULL REQUESTS
 
