@@ -1,0 +1,212 @@
+% LaTeX file for resume 
+% This file uses the resume document class (res.cls)
+
+\documentclass{res} 
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\newsectionwidth{0pt}  % So the text is not indented under section headings
+\usepackage{fancyhdr}  % use this package to get a 2 line header
+\usepackage{hyperref}
+\renewcommand{\headrulewidth}{0pt} % suppress line drawn by default by fancyhdr
+\setlength{\headheight}{24pt} % allow room for 2-line header
+\setlength{\headsep}{24pt}  % space between header and text
+\setlength{\headheight}{24pt} % allow room for 2-line header
+\pagestyle{fancy}     % set pagestyle for document
+% \rhead{ {\it Z. Zinger}\\{\it p. \thepage} } % put text in header (right side)
+\cfoot{}                                     % the foot is empty
+\topmargin=-0.5in % start text higher on the page
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+}
+
+\begin{document}
+\thispagestyle{empty} % this page has no header  
+\name{JULIAN GRINBLAT\\[12pt]} % the \\[12pt] adds a blank line after name
+
+\address{\begin{tabular}{l}{\bf 住所} \\ % for some reason since the second address is a table, the first one has to be too to get the alignment correctly
+   146-0085, 東京都, 大田区  \\
+   久が原 3-30-9, コリーヌ久が原104号室 \\
+   (090) 7768-6902
+\end{tabular}}
+
+\address{\begin{tabular}{@{}ll}
+   Email: & \href{mailto:julian@dotcore.co.il}{julian@dotcore.co.il} \\
+   GitHub: & \url{https://github.com/perrin4869} \\
+   NPM: & \url{https://www.npmjs.com/~perrin4869}
+\end{tabular}}
+
+\begin{resume}
+ 
+\section{\centerline{職歴}} 
+\vspace{8pt}
+{\sl 楽天株式会社} \hfill        2015年4月 ～ 現在
+\vspace{8pt}
+
+\title{APPLICATION ENGINEER}
+\employer{}
+\location{}
+\dates{2018年1月 ～ 現在}
+\begin{position}
+セルフサービス環境のフロントエンドポータル開発に務めていた。
+本来、Reactコンポネントのみとして開発されたものであったが、
+たくさんのライブラリーを導入して、よりいい構築やテストができた。
+使用したライブラリは、redux、react-final-form、ramda、normalizr,
+reselect、re-reselect、mocha、chai、sinon、postcss、等だ。\\
+
+ \begin{itemize} \itemsep -2pt % reduce space between items
+   \item Reduxを利用して、アプリケーションのGlobal Stateを管理した。
+ミドルウェアを使って、APIから情報を読み取り、Local Storageでデータ
+を保存する、等の副作用を成り立たせた。reselectとre-reselectでセレクター
+を書いた。
+  \item eslintとairbnbのルールでコードのlintingができた。
+  \item mocha、chai、sinon、enzymeに基づいたテストを構築
+  \item react-final-formを導入して、フォームのstateを管理
+  \item PostCSSをwebpackで実行することで、ポータルのCSSのビルド
+ができた。BootstrapやFont Awesome、CSSライブラリーの管理がより
+簡単にできた。
+  \item webpackとimageminで画像の圧縮ができた。
+ \end{itemize}
+\end{position}
+
+\title{DEVOPS ENGINEER}
+\employer{}
+\location{}
+\dates{2015年6月 ～ 2017年12月}
+\begin{position}
+入社して、新卒トレーニングが終わったらすぐ、サーバープラットフォームチーム
+に割り当てられた。様々なストレージソリュション（Pure Storage, Nimble Storage等）や、
+OpenStack環境、NuageのSDN環境の管理を務めていたのだ。
+できたタスクは：\\
+
+\begin{itemize} \itemsep -2pt % reduce space between items
+  \item Fluentd、InfluxDB、Grafana、SNMP、ParamikoやPythonのスクリプトで
+ストレージソリューションのレーテンシーやIOPS、テレメトリデータのダッシュボード
+を構築。
+  \item PythonスクリプトでSDNのオペレーションの自動化。バックアップやVMware Clusterの
+資源の配分、常に行うオペレーションはより簡単と正確になった。VMwareをpyVmomiで操作した。
+  \item OpenStack環境でsysctl変数はリブート後に消えた問題を解決。Ansibleのplaybook
+を適当に編集して、必要なノードに変更を施した。
+  \item OpenStack環境のVMをテナント交換した。MySQLレコードを手動で変更するやりかたを
+調べ、テスト環境で試した。マニュアルを書いて、オペレーションを無事に実行した。
+\end{itemize}
+\end{position}
+
+\vspace{0.2in} 
+\section{\centerline{学歴}} 
+\vspace{8pt} 
+{\sl 学士（理学）}, 物理 \\ % \sl will be bold italic in
+大阪大学　理学部物理学科      \hfill    2015年3月
+  
+\vspace{0.2in} 
+
+\newpage
+
+\section{\centerline{オープンソース コントリビューション}}
+\vspace{8pt} 
+
+JavaScriptやNode.jsを中心に、オープンソースソフトウェアに
+コントリビューションをやってきた。GitHubで公開的に見れる。
+
+\subsubsection{プルリクエスト}
+
+\begin{itemize}
+  \item \url{https://github.com/socketio/socket.io/pull/2745} \\
+  バージョン1.5.0でquery stringがちゃんと伝わらなかったバッグ解除のPR。
+  ES5のObject.assignを使って、ちゃんと伝えた。対応中の旧IEでは、polyfill
+  を使うのが、ポイントだ。
+
+  \item \url{https://github.com/socketio/engine.io/pull/444} \\
+  バージョン1.5.1のバッグ解除のPR。回帰テストを追加。
+
+  \item \url{https://github.com/agentk/fontfacegen/pull/26} \\
+  FontForgeというソフトウェアを使って、ウェブ用のフォントを出力するモジュール。
+  出力されるフォントの文字選択機能を追加するPR。日本語みたい、フォントのサイズは
+  数MBにもなりうる場合、利用する文字だけを選択すれば、サイズを抑えるのに便利。
+
+  \item \url{https://github.com/libxmljs/libxmljs/pull/521} \\
+  XMLのprocessing instructionsが対応される、機能追加のPR。
+  svgファイルにスタイルシートを追加するのに便利。
+  libxmljsは裏にC言語のlibxml2に主な機能を任せているので、PRの内容の
+  殆どはC++のコードで書かれている。Node.JSのJavaScriptエンジンのV8の
+  働き方のこと、わかるようになることが多かった。
+
+  \item \url{https://github.com/final-form/react-final-form/pull/266} \\
+  Observer パターンに基づいた、Form Stateを管理するReactコンポネント。
+  Lookaheadコンポネントをreact-final-formとreduxで使う例を追加したPRのだ。
+  final-formの様々な機能が実例される。
+
+  \item \url{https://github.com/jasonpincin/stream-to-string/pull/1} \\
+  Nodeのストリームを文字列に変換するモジュール。
+  変換するときのencodingを指定できるよう、新しいオプションを入れた。
+  回帰テストも書いた。
+  PRの内容は、自分のNPMモジュール、vinyl-to-stringで利用した。
+
+  \item \url{https://github.com/izolate/html2pug/pull/2} \\
+  常にExpressアプリケーションで使われるPugを、HTMLから変換するモジュール。
+  このPRの目的は、HTML Parserをjsdomからparse5に変えることで、HTMLのコメント
+  やHTML Fragment等、より多くの機能に対応することだった。
+
+  \item \url{https://github.com/itgalaxy/favicons/pull/110} \\
+  faviconと関連しているファイルをプラットフォーム毎に作成するためのモジュール。
+  このPRは、Gulpで使う場合、出力されるHTMLをパイプラインに入れてくれる機能を
+  追加する。gulp-html2pug等、他のGulpプラグインでHTMLを更に変更可能になる。
+
+  \item \url{https://github.com/JRJurman/rollup-plugin-polyfill/pull/2} \\
+  Rollupでビルドするアプリケーションにpolyfillを注入するモジュール。
+  このPRでSource Mapsの作成ができるようになった。ビルド時の警告メッセージが
+  消えた。もっとも、CommonJSとESMの2つのフォーマットでモジュールのインポート
+  ができるようになった。
+\end{itemize}
+
+\subsubsection{NPM モジュール}
+
+\begin{itemize}
+  \item \url{https://www.npmjs.com/package/i18next-conv} \\
+  このモジュールの管理人になれた。gettextのPOファイルをi18nextのJSON
+  フォーマットに変換するモジュール。
+  一週間で5000回以上にダウンロードされる。
+
+  \item \url{https://www.npmjs.com/package/i18next-fetch-backend} \\
+  普段i18nextで利用されるXHRバックエンドの代わりに利用できる。
+  fetchを利用するから、クライアントとサーバー両方が扱うコードの場合
+  に特に役立つ。
+  一ヶ月で2000回以上にダウンロードされる。
+
+  \item \url{https://www.npmjs.com/package/react-stay-scrolled} \\
+  チャットウィンドウに新しいメッセージがある等の時に、スクロールダウンするのに
+  役立つReactコンポネント。
+  GitHubで34の星があり、一ヶ月で1000回以上にダウンロードされる。
+
+  \item \url{https://www.npmjs.com/package/vinyl-contents-tostring} \\
+  vinylファイル（Gulpが使うバーチャルファイル）のコンテンツを文字列に変換する
+  モジュール。自作のGulpプラグインが利用している。
+  一ヶ月で1000回以上にダウンロードされる。
+
+  \item \url{https://www.npmjs.com/package/rollup-plugin-i18next-conv} \\
+  Rollupでgettextファイルをi18nextのフォーマットでインポートできるモジュール。
+  webviewのアプリケーション等、訳がオフラインでも必要な場合に便利。
+
+  \item \url{https://www.npmjs.com/package/gulp-xml-transformer} \\
+  GulpでXML編集モジュール。
+  一ヶ月で1000回以上にダウンロードされる。
+\end{itemize}
+
+\vspace{0.2in} 
+\section{\centerline{言語}} 
+\vspace{15pt}
+\begin{itemize}
+   \item スペイン語、ネイティブ
+   \item 英語、流暢
+   \item ヘブライ語、流暢
+   \item 日本語、 日本語能力試験一級合格
+\end{itemize}
+
+
+\vspace{0.2in} 
+ 
+\end{resume} 
+\end{document}

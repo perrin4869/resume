@@ -32,5 +32,8 @@ all: resume.pdf
 resume.pdf: resume.tex
 	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make resume.tex
 
+resume_jp.pdf: resume_jp.tex
+	latexmk -pdfdvi -latex="platex" -e "\$$dvipdf='dvipdfmx %O %S';" -use-make resume_jp.tex
+
 clean:
 	latexmk -CA
