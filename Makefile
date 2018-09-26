@@ -35,5 +35,8 @@ resume.pdf: resume.tex
 resume_jp.pdf: resume_jp.tex
 	latexmk -pdfdvi -latex="platex" -e "\$$dvipdf='dvipdfmx %O %S';" -use-make resume_jp.tex
 
+rireki.pdf: rireki.tex
+	latexmk -pdfdvi -latex="platex" -e "\$$dvipdf='dvipdfmx %O %S';" -use-make rireki.tex
+
 clean:
 	latexmk -CA

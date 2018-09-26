@@ -1,0 +1,133 @@
+%
+% Copyright (c) 1996, 2004, 2006, 2009, 2014, 2016
+% Tama Communications Corporation. All rights reserved.
+%
+% Redistribution and use in source and binary forms, with or without
+% modification, are permitted provided that the following conditions
+% are met:
+% 1. Redistributions of source code must retain the above copyright
+%    notice, this list of conditions and the following disclaimer.
+% 2. Redistributions in binary form must reproduce the above copyright
+%    notice, this list of conditions and the following disclaimer in the
+%    documentation and/or other materials provided with the distribution.
+%
+% THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+% ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+% IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+% ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+% FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+% DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+% OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+% HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+% LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+% OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+% SUCH DAMAGE.
+%
+\documentclass{jarticle}
+\usepackage{rireki}
+%
+% オプション
+%
+% 下記のオプションが利用可能です。
+%
+% \空行挿入		% 学歴と職歴の間に空行を挿入します
+\begin{document}
+%
+% ID情報
+%
+\姓{\Large Grinblat}
+\名{\Large Julian}
+\姓読み{グリンブラット}
+\名読み{ジュリアン}
+\性別{男}					% 男|女
+\誕生日{平成1年8月1日}
+\年齢{29}
+%
+% 顔写真
+%
+% 画像ファイルにはEPS フォーマット・縦横比4:3 のものをご使用ください。
+% 縦を4cm に調整し、縦横比を変更せずに印刷します。
+% 次のように指定します。
+% \顔写真{photo.eps}
+%
+\顔写真{}
+%
+% 現住所
+%
+\現住所郵便番号{1460085}
+\現住所{大田区久が原 3--30--9 コリーヌ久が原104号室}
+\現住所読み{おおたく くがはら ３ー３０ー９　こりーぬくがはら１０４ごうしつ}
+% \現住所市外局番{0123}
+% \現住所電話番号{45-6789}
+% \現住所呼び出し{◯◯ 方}
+\現住所市外局番{なし}
+\現住所電話番号{なし}
+\現住所呼び出し{}
+%
+% 連絡先
+%
+\連絡先郵便番号{}
+\連絡先{\tt julian@dotcore.co.il}
+\連絡先読み{}
+\連絡先市外局番{}
+\連絡先電話番号{090-7768-6902}
+\連絡先呼び出し{}
+%
+% 学歴、職歴
+%
+% 学歴、職歴を年月順に列挙してください。合計20個まで記入出来ます。
+% 20個を超える部分は印刷されませんので、ご注意ください。
+% 印刷順は、学歴=>職歴の順になります。
+%
+
+\学歴{平成21}{8}{テクニオン - イスラエル工科大学 入学}
+\学歴{平成22}{2}{テクニオン - イスラエル工科大学 退学}
+\学歴{平成22}{4}{大阪大学日本語日本文化教育センター 入学}
+\学歴{平成23}{3}{大阪大学日本語日本文化教育センター 卒業}
+\学歴{平成23}{4}{大阪大学　理学部物理学科 入学}
+\学歴{平成27}{3}{大阪大学　理学部物理学科 卒業}
+\職歴{平成27}{4}{株式会社楽天 入社}
+% \職歴{平成30}{12}{株式会社楽天 退職}
+
+%
+% 資格
+%
+% 資格を取得年月順に列挙してください。9つまで記入できます。
+% 9つを超える部分は印刷されませんので、ご注意ください。
+%
+\資格{平成25}{6}{TOEIC スコア９７０ 習得}
+\資格{平成25}{7}{日本語能力試験N1 スコア１３４ 習得}
+% \資格{平成30}{10}{普通自動車一種免許}            % {取得年}{取得月}{資格}
+%
+% 個人情報
+%
+% 志望の動機と本人希望記入欄はlatex のコマンドを記述できます。
+%
+\志望の動機{
+	\begin{tabular}{ll}
+	{\gt 志望の動機} & キャリア向上\\
+	{\gt 趣味} & サイクリング\\
+	{\gt 特技} & スペイン語、英語、ヘブライ語、日本語、4ヶ国語で読み書きできる\\
+	{\gt 好きな学科} & 数学と物理\\
+	% {\gt アピールポイント} & ◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯\\
+	\end{tabular}
+}
+\本人希望記入欄{
+	私が希望する仕事の条件は下記の通りです。
+	\begin{itemize}
+	\item Linuxデスクトップで開発
+	\item 年収 1000 万円
+	\item 年次有給休暇 ２０ 日間
+	\end{itemize}
+}
+%
+% その他
+%
+\通勤時間{約 1時間00分}
+\扶養家族数{0}					% 人数(配偶者を除きます)
+\配偶者{なし}					% あり|なし
+\配偶者の扶養義務{なし}				% あり|なし
+
+\サイン{Your Signature}
+
+\end{document}
