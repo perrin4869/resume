@@ -25,3 +25,7 @@
 *.mtc1
 *.out
 *.synctex.gz
+
+!100-457-704.pdf
+!M101P - Course Completion Confirmation.pdf
+!M102 - Course Completion Confirmation.pdf
