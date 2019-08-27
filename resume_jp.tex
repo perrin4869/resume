@@ -42,21 +42,55 @@
 \begin{resume}
  
 \section{\centerline{職歴}} 
+\dates{2019年2月 - 現在}
 \vspace{8pt}
-{\sl 楽天株式会社} \hfill        2015年4月～現在
+{\sl デロイトトーマツコンサルティング合同会社} \hfill        2019年2月 - 現在
+\vspace{8pt}
+
+\title{SOFTWARE ENGINEER}
+\employer{}
+\location{}
+\begin{position}
+ストラテジーユニットでTechHarborプロジェクトの開発を務めた。
+主な責任はreactベースのウェブアプリとgraphql APIの開発、メインテナンス、及びデプロイ.\\
+
+ \begin{itemize} \itemsep -2pt % reduce space between items
+  \item Oversee development and integration of new features by remote oversea developers.
+    Review all pull requests and provide guidance towards the proferred approach.
+  \item Migrate from AWS Cognito based OAuth 2.0 implicit grant type to Authorization Code grant type
+    to gain advantage of refresh tokens and remove 1 hour login limit.
+  \item react-apolloの公式フックAPIを利用して、apollo-lambdaベースのgraphql APIからデータのフェッチ
+    を実現。Identity tokenとRefresh tokenを正しくインテグレートした。フックのユニットテストを書いた。
+  \item Utilize react-apollo based react hooks to fetch data from our apollo-lambda based API.
+    Correcly manage application state and cache for performance. Integrate with identity tokens.
+    Author unit tests for all hooks.
+  \item Deploy a DynamoDB instance to store user-defined searches and relevant information.
+    Expose API through graphql queries and mutations and write relevant unit and integration tests.
+    Correctly display results on the client side, including form state managed by react-final-form,
+    search results with react-apollo and blueprintjs tables, infinite scrolling based pagination.
+  \item Store data exports over 5MB in S3, which are over the limit of what AWS Lambda
+    functions can return. Respond with an HTTP redirect, handle in the client and save using file-saver.
+  \item Setup docker-compose based development environment with elasticsearch, minio, and DynamoDB.
+    Author custom docker images to create DynamoDB data tables and minio buckets. Run integration tests
+    against this environment.
+  \item Implement recharts based graphs to display search data aggregations. Author relevant graphql queries.
+  \item Utilize react-spring and react-transition-group to provide animations.
+ \end{itemize}
+\end{position}
+
+\vspace{8pt}
+{\sl 楽天株式会社} \hfill        2015年4月～2019年1月
 \vspace{8pt}
 
 \title{APPLICATION ENGINEER}
 \employer{}
 \location{}
-\dates{2018年1月～現在}
+\dates{2018年1月～2019年1月}
 \begin{position}
 セルフサービス環境のフロントエンドポータル開発を務めた。本来、
 このセルフサービス環境は、Reactコンポネントのみとして
 開発されたものであったが、多様なライブラリーを導入することによって、
-コードの構成を整理し、テストを可能にした。
-使用したライブラリは、redux、react-final-form、ramda、normalizr,
-reselect、re-reselect、mocha、chai、sinon、postcss等である。\\
+コードの構成を整理し、テストを可能にした。\\
 
  \begin{itemize} \itemsep -2pt % reduce space between items
   \item Reduxを利用して、アプリケーションのGlobal Stateを管理した。
@@ -105,6 +139,16 @@ NuageのSDN環境の管理を行った。
   
 \vspace{0.2in} 
 
+\section{\centerline{コース}}
+\vspace{8pt} 
+
+\begin{tabular}{@{}ll}
+  M101: MongoDB for Developers & \href{http://university.mongodb.com/course_completion/066efa7d13f84df789a4ddff81524640}{Certificate} \\
+  M102: MongoDB for DBAs & \href{http://university.mongodb.com/course_completion/797324e4c82e4a27b2d33c3749476003}{Certificate} \\
+  Kubernetes Certification by Mirantis (KCM100) & \href{https://training.mirantis.com/verify/certificate/status/bF19JZmlQoYyAoU4jkY15w/100-457-704}{Certificate} \\
+\end{tabular}
+
+
 \newpage
 
 \section{\centerline{オープンソース コントリビューション}}
@@ -123,6 +167,10 @@ JavaScriptやNode.jsを中心に、オープンソースソフトウェアに
 
   \item \url{https://github.com/socketio/engine.io/pull/444} \\
   バージョン1.5.1のバッグ解除のPRである。回帰テストを追加した。
+
+  \item \url{https://github.com/reduxjs/react-redux/pull/1288} \\
+  新しいreact-reduxのフックAPIにおいて、コンポーネントのレンダリングの仕組みを
+  リファレンスの比較で決めるようにした。useState等、公式のReactのフックと同じ仕組みである。
 
   \item \url{https://github.com/agentk/fontfacegen/pull/26} \\
   これは、FontForgeというソフトウェアを使って、ウェブ用のフォントを出力するモジュールである。
@@ -160,12 +208,6 @@ JavaScriptやNode.jsを中心に、オープンソースソフトウェアに
   追加したものである。これによって、gulp-html2pug等といった他の
   Gulp プラグインでの HTML に対するさらなる変更が可能となった。
 
-  \item \url{https://github.com/JRJurman/rollup-plugin-polyfill/pull/2} \\
-  Rollup でビルドするアプリケーションに polyfill を注入するモジュールである。
-  この PR で Source Mapsの作成が可能となり、その結果としてビルド時の
-  警告メッセージが表示されなくなった。さらに、CommonJS と ESM の
-  2 つのフォーマットでモジュールのインポートができるようになった。
-
 \end{itemize}
 
 \subsubsection{NPM モジュール}
@@ -182,6 +224,10 @@ JavaScriptやNode.jsを中心に、オープンソースソフトウェアに
   これはfetch を利用しているため、クライアントとサーバー両方が
   i18nextコードを扱うの際には特に役立つ。
   一ヶ月当り 2000 回以上ダウンロードされている。
+
+  \item \url{https://www.npmjs.com/package/react-scroll-ondrag} \\
+  マウスのドラッグで、Reactのエレメントにスクロールの機能を可能にする
+  フックのモジュール。
 
   \item \url{https://www.npmjs.com/package/react-stay-scrolled} \\
   チャットウィンドウに新しいメッセージが現れるなどの場合において、
