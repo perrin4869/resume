@@ -61,14 +61,14 @@ Working on the TechHarbor project in the Strategy unit. Main responsibilities ar
   \item Utilize react-apollo based react hooks to fetch data from our apollo-lambda based API.
     Correcly manage application state and cache for performance. Integrate with identity tokens.
     Author unit tests for all hooks.
-  \item Utilize DynamoDB to store user-defined searches and relevant information.
+  \item Deploy a DynamoDB instance to store user-defined searches and relevant information.
     Expose API through graphql queries and mutations and write relevant unit and integration tests.
     Correctly display results on the client side, including form state managed by react-final-form,
     search results with react-apollo and blueprintjs tables, infinite scrolling based pagination.
-  \item Utilize S3 to store data exports over 5MB, which are over the limit of what AWS Lambda
-    functions can return. Respond with an HTTP redirect.
-  \item Setup docker-compose based development environment with elasticsearch, minio, and dynamodb.
-    Author custom docker images to create dynamodb data tables and minio buckets. Run integration tests
+  \item Store data exports over 5MB in S3, which are over the limit of what AWS Lambda
+    functions can return. Respond with an HTTP redirect, handle in the client and save using file-saver.
+  \item Setup docker-compose based development environment with elasticsearch, minio, and DynamoDB.
+    Author custom docker images to create DynamoDB data tables and minio buckets. Run integration tests
     against this environment.
   \item Implement recharts based graphs to display search data aggregations. Author relevant graphql queries.
   \item Utilize react-spring and react-transition-group to provide animations.
