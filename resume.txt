@@ -156,6 +156,12 @@ This PR introduces an example demonstrating how to integrate lookahead component
 with react-final-form and redux, and demonstrates the usage of different
 features of the library.
 
+* https://www.npmjs.com/package/redux-persistent
+Meant as an alternative to redux-persist, providing a selector based API,
+while remaining compatible with its storage ecosystem. Persists redux state
+inside a permanent storage, such as localStorage, IndexDB, remote storage,
+and hydrates said state back into the store.
+
 * https://github.com/jasonpincin/stream-to-string/pull/1
 This small module converts a node stream into a string.
 Adds the option to specify a specific encoding when converting a stream to
