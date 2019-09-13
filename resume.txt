@@ -12,6 +12,9 @@ Deloitte Tohmatsu Consulting, Tokyo, Japan                 Feb 01 2019 - Current
 
 SOFTWARE ENGINEER
 
+Working on the TechHarbor project in the Strategy unit. Main responsibilities are development,
+maintenance and deployment of the react-based frontend and the serverless-based graphql API.
+
 * Oversee development and integration of new features by remote oversea developers.
   Review all pull requests and provide guidance towards the preferred approach.
 
